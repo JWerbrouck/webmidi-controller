@@ -1,0 +1,31 @@
+/* src/components/MidiControl.css */
+.midi-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%; /* Ensure control does not exceed its container */
+}
+
+.slider {
+  width: 150px; /* Set width for horizontal slider */
+}
+
+.button {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.button-on {
+  background-color: #007bff; /* Blue color for "on" state */
+  color: white;
+}
+
+.button-off {
+  background-color: #ccc; /* Gray color for "off" state */
+  color: black;
+}

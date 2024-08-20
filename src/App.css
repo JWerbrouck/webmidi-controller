@@ -1,38 +1,125 @@
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevent scrolling */
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Ensure it stays on top */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar button, .navbar input[type="file"] {
+  margin: 0 10px;
+  cursor: pointer;
+  background-color: #555;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar button:hover, .navbar input[type="file"]:hover {
+  background-color: #777;
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px; /* Space for the fixed navbar */
+  flex: 1;
+  overflow: hidden; /* Prevent outer scroll */
+}
+
+.controls-slider-container, .controls-button-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  padding: 10px;
+  box-sizing: border-box;
+  max-height: calc(50vh - 70px); /* Ensure container height fits viewport, with padding and margins */
+}
+
+.controls-slider-container {
+  border-bottom: 1px solid #ccc;
+}
+
+.controls-button-container {
+  border-top: 1px solid #ccc;
+}
+
+.control-wrapper {
+  margin: 5px;
+  position: relative;
+  flex: 1 1 100px; /* Flex basis for responsive layout */
+  max-width: 100px; /* Prevent items from growing too large */
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.control-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
   color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+.close:hover {
+  background: darkred;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button.add-control {
+  margin: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.add-control:hover {
+  background-color: #45a049;
+}
+
+input[type="file"] {
+  display: none; /* Hide the default file input */
 }

@@ -1,0 +1,5 @@
+[
+    { "type": "slider", "defaultCcNumber": 2, "tag": "slider1", "defaultValue": 64 },
+    { "type": "button", "defaultCcNumber": 1, "tag": "button1", "defaultValue": 0 }
+  ]
+  
